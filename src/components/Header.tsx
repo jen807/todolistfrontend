@@ -2,13 +2,15 @@ import { Avatar, Box, HStack, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import useUser from "../lib/useUser";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { userLogout } from "../api";
 import { useToast } from "@chakra-ui/react";
 
 const Header = () => {
   const { user, isLoading, isLoggedIn } = useUser();
   const toast = useToast();
+
+  const queryClient = useQueryClient();
 
   const mutation = useMutation({
     mutationFn: userLogout,
@@ -17,6 +19,9 @@ const Header = () => {
         title: "로그아웃",
         description: "로그아웃 하였습니다",
         status: "success",
+      });
+      queryClient.refetchQueries({
+        queryKey: ["me"],
       });
     },
     onError: () => {

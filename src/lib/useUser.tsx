@@ -6,6 +6,7 @@ const useUser = () => {
   const { data, isLoading, isError } = useQuery<IUser>({
     queryKey: ["me"],
     queryFn: getMe,
+    retry: false,
   });
 
   // console.log(data);
