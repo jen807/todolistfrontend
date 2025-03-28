@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import useUser from "./lib/useUser";
 import UserProfile from "./pages/UserProfile";
 import EditProfile from "./pages/EditProfile";
+import SignUp from "./pages/SignUp";
 
 const Router = () => {
   const { isLoggedIn } = useUser();
@@ -14,6 +15,7 @@ const Router = () => {
         <Route path="/login" element={isLoggedIn ? <Home /> : <Login />} />
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/profile/edit" element={<EditProfile />} />
+        <Route path="login/signup" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   );

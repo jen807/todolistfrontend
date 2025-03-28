@@ -12,7 +12,7 @@ import {
 import logo from "../imgs/logo.png";
 import { useForm } from "react-hook-form";
 import { ILogin } from "../types";
-import { data, useNavigate } from "react-router-dom";
+import { data, Link, useNavigate } from "react-router-dom";
 import { title } from "process";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { userLogin } from "../api";
@@ -116,9 +116,15 @@ const Login = () => {
         >
           Login
         </Button>
-        <Text marginTop={"5px"} fontSize={"14px"}>
-          Click here for sign up
-        </Text>
+        <Link to={"/login/signup"}>
+          <Text
+            marginTop={"5px"}
+            fontSize={"14px"}
+            _hover={{ textDecoration: "underline", cursor: "pointer" }}
+          >
+            Click here for sign up
+          </Text>
+        </Link>
       </Box>
     </Box>
   );

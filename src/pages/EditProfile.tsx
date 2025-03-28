@@ -49,7 +49,7 @@ const EditProfile = () => {
 
           <Box pos={"relative"} mb={"30px"}>
             <FormLabel htmlFor="avatarFile" cursor={"pointer"}>
-              <Avatar src={user?.username} name={user?.username} size={"xl"} />
+              <Avatar src="#" name={user?.username} size={"xl"} />
               <Box
                 fontSize={"14px"}
                 pos={"absolute"}
@@ -67,12 +67,12 @@ const EditProfile = () => {
 
           <FormControl>
             <FormLabel fontWeight={"700"}>Name</FormLabel>
-            <Input {...(register("name"), { required: false })} />
+            <Input {...register("name", { required: false })} />
           </FormControl>
 
           <FormControl>
             <FormLabel fontWeight={"700"}>Email</FormLabel>
-            <Input {...(register("email"), { required: false })} />
+            <Input {...register("email", { required: false })} />
           </FormControl>
 
           <Button mt={"30px"} w={"100%"} colorScheme="green" type={"submit"}>

@@ -57,7 +57,7 @@ const Header = () => {
               <Link to={"/"}>Home</Link>
             </MenuItem>
             <MenuItem>
-              <Link to={"#"}>Edit</Link>
+              <Link to={"/profile"}>Edit</Link>
             </MenuItem>
             <MenuItem onClick={onClickLogout}>Logout</MenuItem>
           </MenuList>
