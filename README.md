@@ -2,7 +2,7 @@
 
 ### User
 
-- [ ] signup
+- [x] signup
 - [x] login
 - [x] logout
 - [x] me
@@ -11,7 +11,7 @@
 
 # todo
 
-- [ ] get todos
-- [ ] todo detail
+- [x] get todos
+- [x] todo detail
 - [ ] todo edit
 - [ ] todo delete

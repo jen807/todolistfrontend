@@ -60,7 +60,7 @@ const EditProfile = () => {
                 p={"5px"}
                 boxShadow={"md"}
               >
-                <FaCamera />
+                {/* <FaCamera /> */}
               </Box>
             </FormLabel>
           </Box>
