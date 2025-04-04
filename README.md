@@ -6,12 +6,12 @@
 - [x] login
 - [x] logout
 - [x] me
-- [ ] edit
+- [] edit
 - [ ] change password
 
 # todo
 
 - [x] get todos
 - [x] todo detail
-- [ ] todo edit
+- [x] todo edit
 - [ ] todo delete
