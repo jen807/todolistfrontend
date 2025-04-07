@@ -7,6 +7,7 @@ import EditProfile from "./pages/EditProfile";
 import SignUp from "./pages/SignUp";
 import Detail from "./pages/Detail";
 import { EditTodo } from "./pages/EditTodo";
+import ChangePassword from "./pages/ChangePassword";
 
 const Router = () => {
   const { isLoggedIn } = useUser();
@@ -20,6 +21,7 @@ const Router = () => {
         <Route path="/login/signup" element={<SignUp />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/detail/:id/edit" element={<EditTodo />} />
+        <Route path="/profile/changepassword" element={<ChangePassword />} />
       </Routes>
     </BrowserRouter>
   );

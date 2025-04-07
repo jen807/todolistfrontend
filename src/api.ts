@@ -1,7 +1,14 @@
 import axios from "axios";
 import Cookie from "js-cookie";
-import { ILogin, ISignUp, ITodoEditValid } from "./types";
+import {
+  IChangePassword,
+  ICreateTodo,
+  ILogin,
+  ISignUp,
+  ITodoEditValid,
+} from "./types";
 import { QueryFunctionContext } from "@tanstack/react-query";
+import { data } from "react-router-dom";
 
 const instance = axios.create({
   baseURL: "http://127.0.0.1:8000/api/v1/",
@@ -70,3 +77,22 @@ export const deleteTodo = ({ id }: IDeleteTodoVarialabe) => {
     })
     .then((res) => res.data);
 };
+
+export const changePassword = (data: IChangePassword) => {
+  return instance
+    .put("users/changepassword/", data, {
+      headers: {
+        "X-CSRFToken": Cookie.get("csrftoken") || "",
+      },
+    })
+    .then((res) => res.data);
+};
+
+export const createTodo = (data: ICreateTodo) =>
+  instance
+    .post("todos/", data, {
+      headers: {
+        "X-CSRFToken": Cookie.get("csrftoken") || "",
+      },
+    })
+    .then((res) => res.data);
